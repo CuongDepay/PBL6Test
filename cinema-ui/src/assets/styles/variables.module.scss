@@ -1,0 +1,140 @@
+// base color
+$blue: #324157;
+$light-blue: #3a71a8;
+$red: #c03639;
+$pink: #e65d6e;
+$green: #30b08f;
+$tiffany: #4ab7bd;
+$yellow: #fec171;
+$panGreen: #30b08f;
+
+// Default menu theme style
+$base-menu-color: #bfcbd9;
+$base-menu-color-active: #f4f4f5;
+$base-menu-background: #FFFFFF;
+$base-logo-title-color: #ffffff;
+
+$base-menu-light-color: rgba(0, 0, 0, 0.7);
+$base-menu-light-background: #ffffff;
+$base-logo-light-title-color: #001529;
+
+$base-sub-menu-background: #FFFFFF;
+$base-sub-menu-hover: #F3F4F6;
+
+// Customize dark menu style
+/**
+$base-menu-color:hsla(0,0%,100%,.65);
+$base-menu-color-active:#fff;
+$base-menu-background:#001529;
+$base-logo-title-color: #ffffff;
+
+$base-menu-light-color:rgba(0,0,0,.70);
+$base-menu-light-background:#ffffff;
+$base-logo-light-title-color: #001529;
+
+$base-sub-menu-background:#000c17;
+$base-sub-menu-hover:#001528;
+*/
+
+$--color-primary: #409eff;
+$--color-success: #67c23a;
+$--color-warning: #e6a23c;
+$--color-danger: #f56c6c;
+$--color-info: #909399;
+
+$blue-25: #F5FAFF;
+$blue-50: #EFF8FF;
+$blue-100: #D1E9FF;
+$blue-200: #B2DDFF;
+$blue-300: #84CAFF;
+$blue-400: #53B1FD;
+$blue-500: #2E90FA;
+$blue-600: #1570EF;
+$blue-700: #175CD3;
+$blue-800: #1849A9;
+$blue-900: #194185;
+
+$gray-0: #FFFFFF;
+$gray-25: #FCFCFD;
+$gray-50: #F9FAFB;
+$gray-100: #F3F4F6;
+$gray-200: #E5E7EB;
+$gray-300: #D2D6DB;
+$gray-400: #9DA4AE;
+$gray-500: #6C737F;
+$gray-600: #4D5761;
+$gray-700: #384250;
+$gray-800: #1F2A37;
+$gray-900: #111927;
+
+$green-25: #F6FEF9;
+$green-50: #EDFCF2;
+$green-100: #D3F8DF;
+$green-200: #AAF0C4;
+$green-300: #73E2A3;
+$green-400: #3CCB7F;
+$green-500: #16B364;
+$green-600: #099250;
+$green-700: #087443;
+$green-800: #095C37;
+$green-900: #084C2E;
+
+$red-25: #FFFAFA;
+$red-50: #FEF3F2;
+$red-100: #FEE4E2;
+$red-200: #FECDCA;
+$red-300: #FDA29B;
+$red-400: #F97066;
+$red-500: #F04438;
+$red-600: #D92D20;
+$red-700: #B32318;
+$red-800: #912018;
+$red-900: #7A271A;
+
+$yellow-25: #FFFCF5;
+$yellow-50: #FFFAEB;
+$yellow-100: #FEEFC7;
+$yellow-200: #FEDF89;
+$yellow-300: #FEC84B;
+$yellow-400: #FDB022;
+$yellow-500: #F79009;
+$yellow-600: #DC6803;
+$yellow-700: #B54708;
+$yellow-800: #93370D;
+$yellow-900: #792E0D;
+
+$violet-25: #FCFAFF;
+$violet-50: #F9F5FF;
+$violet-100: #F4EBFF;
+$violet-200: #E9D7FE;
+$violet-300: #D6BBFB;
+$violet-400: #B692F6;
+$violet-500: #9E77ED;
+$violet-600: #7F56D9;
+$violet-700: #6941C6;
+$violet-800: #53389E;
+$violet-900: #42307D;
+
+$base-sidebar-width: 228px;
+$base-header-height: 56px;
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  menuColor: $base-menu-color;
+  menuLightColor: $base-menu-light-color;
+  menuColorActive: $base-menu-color-active;
+  menuBackground: $base-menu-background;
+  menuLightBackground: $base-menu-light-background;
+  subMenuBackground: $base-sub-menu-background;
+  subMenuHover: $base-sub-menu-hover;
+  sideBarWidth: $base-sidebar-width;
+  headerHeight: $base-header-height;
+  logoTitleColor: $base-logo-title-color;
+  logoLightTitleColor: $base-logo-light-title-color;
+  primaryColor: $--color-primary;
+  successColor: $--color-success;
+  dangerColor: $--color-danger;
+  infoColor: $--color-info;
+  warningColor: $--color-warning;
+}

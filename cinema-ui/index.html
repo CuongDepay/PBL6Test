@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="icon" href="/favicon.png" />
+    <title>Star Cinema</title>
+    <style>
+      html,
+      body,
+      #app {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .chromeframe {
+        margin: 0.2em 0;
+        background: #ccc;
+        color: #000;
+        padding: 0.2em 0;
+      }
+
+      #loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999999;
+        background: #111927;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .loader {
+        width: 60vw;
+        height: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+
+      .vessel {
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+        align-items: end;
+      }
+
+      .vessel-line {
+        height: 4px;
+        width: 100%;
+        border-radius: 50px;
+        background: linear-gradient(90deg, rgba(46, 144, 250, 0.00) 0%, #2efaa5 100%);
+      }
+
+      #vessel {
+        width: 162px;
+        -webkit-animation: linear forwards;
+        -webkit-animation-name: run;
+        -webkit-animation-duration: 1s;
+      }
+      @-webkit-keyframes run {
+        0% {
+          width: 162px;
+        }
+        100% {
+          width: calc(60vw - 17px);    
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <div id="loader-wrapper">
+        <div class="loader">
+          <div class="vessel" id="vessel">
+            <img src="/src/assets/images/film-loading.png" width=90px height=90px>
+            <div class="vessel-line"></div>
+          </div>
+          <img src="/src/assets/images/cinema.png" width=51px height=51px style="margin-top: 80px; position: absolute; right: 0;">
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

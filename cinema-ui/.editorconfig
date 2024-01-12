@@ -1,0 +1,21 @@
+# Tell the EditorConfig plug-in that this is the root file, no need to continue to look up
+root = true
+
+# match all files
+[*]
+# Indentation style, optional space, tab
+indent_style = space
+# number of spaces for indentation
+indent_size = 2
+# set character set
+charset = utf-8
+# Trailing newline, optional lf, cr, crlf
+end_of_line = lf
+# Insert a newline at the end of the file
+trim_trailing_whitespace = true
+# remove leading and trailing spaces in a line
+insert_final_newline = true
+
+[*.md]
+insert_final_newline = false
+trim_trailing_whitespace = false

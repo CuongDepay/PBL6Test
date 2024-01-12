@@ -1,0 +1,409 @@
+#app {
+  .main-container {
+    height: 100%;
+    transition: margin-left 0.28s;
+    margin-left: $base-sidebar-width;
+    margin-top: $base-header-height;
+    position: relative;
+  }
+
+  .sidebarHide {
+    margin-left: 0 !important;
+  }
+
+  .sidebar-container {
+    -webkit-transition: width 0.28s;
+    transition: width 0.28s;
+    width: $base-sidebar-width !important;
+    background-color: $base-menu-background;
+    height: calc(100% - $base-header-height);
+    position: fixed;
+    font-size: 0;
+    top: $base-header-height;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    overflow: hidden;
+    // -webkit-box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+    // box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+    padding: 24px 4px 0px 4px;
+    border-right: 1px solid $gray-200;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    // reset element-ui css
+    .horizontal-collapse-transition {
+      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
+    }
+
+    .scrollbar-wrapper {
+      overflow-x: hidden !important;
+      margin-top: 20px;
+    }
+
+    .el-scrollbar__bar.is-vertical {
+      right: 0;
+    }
+
+    .el-scrollbar {
+      height: 100%;
+    }
+
+    &.has-logo {
+      .el-scrollbar {
+        height: calc(100% - 50px);
+      }
+    }
+
+    .is-horizontal {
+      display: none;
+    }
+
+    a {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    // .svg-icon {
+    //   margin-right: 8px;
+    // }
+
+    .el-menu {
+      border: none;
+      height: 100%;
+      width: 100% !important;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .el-sub-menu.is-opened {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+
+    .el-menu-item,
+    .menu-title {
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+      height: 36px;
+    }
+    
+    .menu-title {
+      height: 20px;
+      color: $gray-700;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .el-menu-item.is-active {
+      border-left: 2px solid $blue-500;
+      background: $blue-50 !important;
+
+      svg {
+        filter: brightness(0) saturate(100%) invert(49%) sepia(30%) saturate(5341%) hue-rotate(193deg) brightness(101%) contrast(96%);
+      }
+
+      svg.solid {
+        filter: unset;
+      }
+
+      .menu-title {
+        color: $blue-500;
+      }
+    }
+
+    .el-menu-item .el-menu-tooltip__trigger {
+      // display: inline-block !important;
+      display: flex;
+      padding: 8px 16px;
+      align-items: center;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 0;
+      }
+    }
+
+    // menu hover
+    .sub-menu-title-noDropdown,
+    .el-sub-menu__title {
+      border-radius: 4px;
+      border-left: 2px solid transparent;
+      height: 36px;
+      padding: 8px 30px 8px 14px;
+      &:hover {
+        background-color: $base-sub-menu-hover !important;
+
+        .menu-title {
+          color: $blue-500;
+        }
+
+        svg {
+          filter: brightness(0) saturate(100%) invert(49%) sepia(30%) saturate(5341%) hue-rotate(193deg) brightness(101%) contrast(96%);
+        }
+
+        svg.solid {
+          filter: unset;
+        }
+      }
+      svg {
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+      }
+      .el-sub-menu__icon-arrow {
+        margin-right: -9px;
+        svg {
+          width: 16px;
+          height: 16px;
+          margin: 0;
+          color: $gray-500;
+        }
+      }
+    }
+
+    & .theme-dark .is-active > .el-sub-menu__title {
+      // color: $base-menu-color-active !important;
+      // background: $base-sub-menu-hover !important;
+      // border-radius: 4px;
+      border-left: 2px solid $blue-500;
+      background: $blue-50 !important;
+
+      svg {
+        filter: brightness(0) saturate(100%) invert(49%) sepia(30%) saturate(5341%) hue-rotate(193deg) brightness(101%) contrast(96%);
+      }
+
+      svg.solid {
+        filter: unset;
+      }
+
+      .menu-title {
+        color: $blue-500 !important;
+      }
+    }
+
+    .el-sub-menu.is-active .nest-menu .el-menu-item.is-active {
+      border-left: 0;
+      background: $blue-50 !important;
+    }
+
+    & .nest-menu .el-sub-menu > .el-sub-menu__title,
+    & .el-sub-menu .el-menu-item {
+      // min-width: $base-sidebar-width !important;
+      border-radius: 6px !important;
+      height: 36px;
+      padding: 10px 10px 10px 44px;
+      &:hover {
+        background-color: $base-sub-menu-hover !important;
+
+        .menu-title {
+          color: $blue-500;
+        }
+      }
+    }
+
+    & .theme-dark .nest-menu .el-sub-menu > .el-sub-menu__title,
+    & .theme-dark .el-sub-menu .el-menu-item {
+      background-color: $base-sub-menu-background !important;
+      border-radius: 4px;
+      height: 36px;
+      &:hover {
+        background-color: $base-sub-menu-hover !important;
+      }
+    }
+  }
+
+  .hideSidebar {
+    .sidebar-container {
+      width: 60px !important;
+    }
+
+    .main-container {
+      margin-left: 60px;
+    }
+
+    .sub-menu-title-noDropdown {
+      padding: 0 !important;
+      position: relative;
+
+      .el-tooltip {
+        padding: 0 !important;
+
+        // .svg-icon {
+        //   margin-left: 20px;
+        // }
+      }
+    }
+
+    .el-sub-menu {
+      overflow: hidden;
+
+      & > .el-sub-menu__title {
+        padding: 8px 16px !important;
+        display: flex;
+
+        .svg-icon {
+          // margin-left: 20px;
+          margin-right: 0;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .el-menu--collapse {
+      .el-sub-menu {
+        & > .el-sub-menu__title {
+          & > span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+          & > i {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  .el-menu--collapse .el-menu .el-sub-menu {
+    min-width: $base-sidebar-width !important;
+  }
+
+  // mobile responsive
+  .mobile {
+    .main-container {
+      margin-left: 0px;
+    }
+
+    .sidebar-container {
+      transition: transform 0.28s;
+      width: $base-sidebar-width !important;
+    }
+
+    &.hideSidebar {
+      .sidebar-container {
+        pointer-events: none;
+        transition-duration: 0.3s;
+        transform: translate3d(-$base-sidebar-width, 0, 0);
+      }
+    }
+  }
+
+  .withoutAnimation {
+    .main-container,
+    .sidebar-container {
+      transition: none;
+    }
+  }
+}
+
+// when menu collapsed
+.el-menu--vertical {
+  // & > .el-menu {
+  //   .svg-icon {
+  //     margin-right: 16px;
+  //   }
+  // }
+
+  .nest-menu .el-sub-menu > .el-sub-menu__title,
+  .el-menu-item {
+    border-radius: 4px;
+    height: 36px;
+
+    &:hover {
+      // you can use $sub-menuHover
+      background-color: $base-sub-menu-hover !important;
+
+      .menu-title {
+        color: $blue-500 !important;
+      }
+    }
+
+    &.submenu-title-noDropdown {
+      padding: 8px 10px 8px 16px !important;
+
+      &:hover {
+        svg {
+          filter: brightness(0) saturate(100%) invert(49%) sepia(30%) saturate(5341%) hue-rotate(193deg) brightness(101%) contrast(96%);
+        }
+        svg.solid {
+          filter: unset;
+        }
+      }
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+  }
+
+  // the scroll bar appears when the sub-menu is too long
+  > .el-menu--popup {
+    max-height: 100vh;
+    overflow-y: auto;
+    background: $gray-0;
+    box-shadow: 0px 4px 6px -2px rgba(17, 25, 39, 0.03), 0px 12px 16px -4px rgba(17, 25, 39, 0.08);
+    padding: 6px 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &::-webkit-scrollbar-track-piece {
+      background: $gray-0;
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $gray-400;
+      border-radius: 100px;
+
+      &:hover {
+        background: $gray-500;
+      }
+
+      &:active {
+        background: $gray-600;
+      }
+    }
+
+    .nest-menu a .el-menu-item {
+      padding: 10px;
+      color: $gray-700;
+      font-size: 14px;
+      border-radius: 6px;
+
+      &:hover {
+        background-color: $gray-100;
+        span {
+          color: $blue-500 !important;
+        }
+      }
+
+      &.is-active {
+        background-color: $blue-50 !important;
+        span {
+          color: $blue-500 !important;
+        }
+      }
+    }
+  }
+}
